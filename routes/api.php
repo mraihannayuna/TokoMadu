@@ -14,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/', [LandingController::class, 'index'])->name('landing');
+Route::resource('shop', ShopController::class);
+Route::resource('transaction', TransactionController::class);
